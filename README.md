@@ -1,4 +1,4 @@
-# vue-steafish
+# react-steafish
 
 This simple plugin will enable your application having in-context translated text in your application. It will also make it simple to do translation of the texts to other languages.
 
@@ -22,11 +22,11 @@ Use the tag <translation></translate> in your components in the follwing way:
 
 If you do not use any parameters like the following:
 ```
-<translate>I really like Vue</translate>
+<translate>I really like React</translate>
 ```
 The string will still show, but it will not find its way into your storage. You are required to add the sid like the following:
  ```
-<translate sid="i_like_vue">I really like Vue</translate>
+<translate sid="i_like_react">I really like React</translate>
 ```
 
 ### Special cases
@@ -39,24 +39,20 @@ In somecases you would have a sting that looks like this
 Using the tag above will not do a correct translation. Do the following:
 
 ```
-<template>
-    <div>{{this.placesInJanuary()}}</div>
-</template>
-<script>
+<div>{{placesInJanuary()}}</div>
 ...
 
-computed(){
-    placesInJanuary(){
-        const string = this.$getMessage('In many places January is {summer_or_winter}', 'string-id-for-your-string', 'optional-category', this.$getLanguage());
-        const summer = this.$getMessage('summer', 'string-id-for-summer', this.$getLanguage());
-        const winter = this.$getMessage('winter', 'string-id-for-winter', this.$getLanguage());
-        if(southernHemisphere(this.$getLanguage()))
+
+    function placesInJanuary(){
+        const string = this.getMessage('In many places January is {summer_or_winter}', 'string-id-for-your-string', 'optional-category', this.$getLanguage());
+        const summer = this.getMessage('summer', 'string-id-for-summer', this.$getLanguage());
+        const winter = this.getMessage('winter', 'string-id-for-winter', this.$getLanguage());
+        if(southernHemisphere(this.getLanguage()))
             return string.replace('{summer_or_winter}',summer);
         else{
             return string.replace('{summer_or_winter}',winter);
         }    
     }    
-}
 </script>
 ```
 In some cases the translate tag cannot be used. In these cases we can use a computed variable or use the this.$getMessage(...) directly. The this.$getMessage(...) string "In many places January is {summer_or_winter}". In return it will give the translated string if that exsists. We do the same for the translation for both summer and winter. Depending upon if the language stems from countries at the southers hemisphere or not, the translated string is returned, where the correct season is returned.
@@ -83,7 +79,7 @@ The setup options will be exlained in more detailed below. First of all you shou
 
 Install the component using npm or using your gui. Here is how you would do it using npm:
 ```
-npm install vue-steafish
+npm install react-steafish
 ```
 
 ## Use it in your project
@@ -92,14 +88,14 @@ The component will need to be imported and initiated. The basic initiation is do
 
 ### Initial configuration
 
-In your main.js you need to include the following:
+In your App.js you need to include the following:
 ```
-import translate from 'vue-steafish'
+import translater from 'react-steafish'
 
-vue.use(translate, { .....})
+
 ```
 ## Additional configuration
-In order to get string-data to be available to the translate-tags, you will need to provide it. You can do this by importing it into your application, use vuex or use a database. One option does not exclude the second, since to can populate the database and then export your data into the string-data-file.
+In order to get string-data to be available to the translate-tags, you will need to provide it. You can do this by importing it into your application, and a database. One option does not exclude the second, since to can populate the database and then export your data into the string-data-file.
 
 If you like you can skip the additional configuration, and save that work for later.
 
@@ -128,54 +124,18 @@ Your source strings needs to be extracted from your project and stored into a da
 
 The first step in the configuration process is to obtain a api-key. [Register for a Steafish-account here](https://www.steafish.com). After you have logged in, you will be able to obtain your api-key.
 
-Having the api_key you need is to do is to do is to tell vue-steafish about the database. In your main.js you need to paste the code below. Before using it in your project you need to change:
+Having the api_key you need is to do is to do is to tell react-steafish about the database. In your main.js you need to paste the code below. Before using it in your project you need to change:
 * Project name: Any text will do, but it will be visible to you, your translators and your proof-readers
 * Source language: This will be the source language your translators will use as a source-language when translating
 * Language codes: The list of languages that your language should be translated to. This can be changed in the dashboard after you have loaded the strings in the steafish-application
 * API key: After registering and logged into the application you can obtain your API key
 
 
+In your .env.local file you need the following;
 ```
-
-Vue.use(VueTranslate, {
-  getString: () => {
-    return null;
-  },
-             
-  setString: (string, string_id, category_id, language_id, context) => {
-    if (string && string_id && process.env.NODE_ENV=='development') { 
-      let stringObj = {
-        string_id: string_id,
-        language_id: language_id,
-        string: string,
-        context:context,
-        project_name: 'Test project',     //TODO: Enter the name of your project
-        src_language:'en',                //TODO: Enter the source language for your project
-        language_ids : ['es', 'nl', 'da'] //TODO: Language codes to be translated to (valid languaage codes can be found here: https://cloud.google.com/translate/docs/languages)
-      };
-      if (category_id) {
-        stringObj.category_id = category_id;
-      }
-      
-      //TODO: Register at https://www.steafish.com to obtain api_key, and paste it in below
-      const apikey = '******************************************************';
-      //
-
-      axios.defaults.withCredentials = true;
-      const url = 'https://www.steafish.com/api/string';
-      axios.post(url, stringObj, {headers : { Authorization : 'Bearer ' + apikey}}).then((result) => {
-          console.log("String: ", result);
-      });  
-    }
-  },
-  getSourceLanguage: () => {
-    return "en";
-  },
-  getLanguage: () => {
-    return "en";
-  },
-});
-
+REACT_APP_STEAFISH_ACCESS_KEY=1|hl7SozTQW2DNj433qW5dB2KbDLe28ijYsvpjKFNU9WzU4
+REACT_APP_STEAFISH_SRC_LANGUAGE_ID=en
+REACT_APP_STEAFISH_TRANSLATE_TO_LANGUAGE_IDS=nl,fr,de,es,pt,it
 ....
 
 ```
@@ -196,36 +156,3 @@ axios.get(url, props).then((result) => {
   console.log("Result: ", result);
 });  
 ```
-
-## Setting the language
-
-There are two language settings to be awear of. The first is your source-language. Once set you cannot change back. The second is the current language:
-```
-...
-
-beforeCreate() {
-    ...
-    this.$setLanguage('en');
-    this.$setSourceLanguage('en');
-    ...
-},
-methods: {
-    ...
-    setCurrentLanguage(language){
-        this.$setLanguage(language);
-    }    
-    ...
-}    
-
-```
-
-# Start translating your application
-
-When you have written your application, you are ready to start translating. You can do this by setting the required language by the following statements:
-```
-    ....
-    this.$setLanguage('fr_FR');
-    this.$setAdmin(true);
-    ...
-```
-This will set the current language to French and all labels will be editable. This means that the translator wil do the translations using your application. When the translator is done, you are ready to export the stringData.json file.
