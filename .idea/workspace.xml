@@ -4,6 +4,7 @@
     <list default="true" id="5eeaa89d-6f02-45a4-bc15-3ea0ff27679c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +71,7 @@
       <workItem from="1642013578728" duration="3181000" />
       <workItem from="1642613337824" duration="496000" />
       <workItem from="1642614297496" duration="2431000" />
-      <workItem from="1642697544007" duration="893000" />
+      <workItem from="1642697544007" duration="3374000" />
     </task>
     <servers />
   </component>

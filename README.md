@@ -20,15 +20,11 @@ Use the tag <translation></translate> in your components in the follwing way:
 
 ### What attributes do I need?
 
-If you do not use any parameters like the following:
-```
-<translate>I really like React</translate>
-```
-The string will still show, but it will not find its way into your storage. You are required to add the sid like the following:
+You are required to have sid as a parameter like the following:
  ```
 <translate sid="i_like_react">I really like React</translate>
 ```
-
+The parameter sid is used to fetch your translated strings when you deploy your app into production
 ### Special cases
 
 In somecases you would have a sting that looks like this
@@ -119,7 +115,7 @@ Your source strings needs to be extracted from your project and stored into a da
 * Create your own plattform using FireBase. Then you are able to create your own translation plattform on the client-side
 
 
-#### Configuration (steafish.com)
+#### Configuration
 
 
 The first step in the configuration process is to obtain a api-key. [Register for a Steafish-account here](https://www.steafish.com). After you have logged in, you will be able to obtain your api-key.
