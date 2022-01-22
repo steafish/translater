@@ -1,19 +1,23 @@
-import './App.css';
 import React from "react";
 import Translate from './Translate'
-import {BrowserRouter as Router} from 'react-router-dom';
+//import {BrowserRouter as Router} from 'react-router-dom';
+import translateMessage from "./TranslateMessage";
+
 
 function App() {
+
+    let text = translateMessage('TestMessage', 'string_id');
+
 
 
   return (
     <div className="App">
-        <Router>
       <header className="App-header">
         Test2
+
       </header>
-      <Translate sid="test_string_id">slot</Translate>
-        </Router>
+        <p>{text}</p>
+        <Translate sid="test_string_id">slot</Translate>
     </div>
   );
 }
