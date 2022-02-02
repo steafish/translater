@@ -4,7 +4,56 @@ This simple plugin will enable your application having in-context translated tex
 
 
 # How does it work?
-[This documentation is also available at www.steafish.com](https://www.steafish.com/#/documentation). The site offers a free web based application for translate your text in context.
+
+
+```
+import React from "react";
+import Translate from './Translate'
+import TranslateMessage from "./TranslateMessage";
+import {TranslateContext} from "./TranslateContext";
+//Place your translated strings in a file that can be imported
+import {allStrings} from "./assets/Strings";
+
+function App() {
+const valueObj = {
+strings: allStrings,
+language_id: 'it'
+}
+
+return (
+<TranslateContext.Provider className="App" value={valueObj}>
+<header className="App-header">
+This is a header
+</header>
+<p>{TranslateMessage(valueObj, 'TestMessage', 'message_string_id')}</p>
+<Translate sid="test_string_id">slot</Translate>
+</TranslateContext.Provider>
+);
+}
+```
+
+In the root of the src folder you need to add the following in your env-file, and since it will only be used during development, your can name this file .env.local
+
+The content of your .env.local file will have three lines. The first  line describes the access-key that you will obtain from http://www.steafish.com
+The second line describes the source language of your strings in your tags. The last line describes the languages it is required to translate to. In the example below it is required to translate from English and translate to Dutch, Danish and Italian.
+
+```
+REACT_APP_STEAFISH_ACCESS_KEY=********************
+REACT_APP_STEAFISH_SRC_LANGUAGE_ID=en
+REACT_APP_STEAFISH_TRANSLATE_TO_LANGUAGE_IDS=nl,dk,de
+```
+## Translated strings
+To make your translated strings available for App.js, place your translated strings in a folder under src and name it assets
+the content of strings.js should be:
+```
+const allStrings = [
+        {"string_id":"message_string_id", "category_id": "front_page_of_app", "string": "Message: Here it is...", "language_id": "en"},
+        {"string_id":"message_string_id", "category_id": "front_page_of_app", "string": "Messagio: Qui allora...", "language_id": "it"},
+        {"string_id":"test_string_id", "category_id": "front_page_of_app", "string": "That is a word...", "language_id": "en"},
+        {"string_id":"test_string_id", "category_id": "front_page_of_app", "string": "Quello e un parole", "language_id": "it"}];
+
+export {allStrings}
+```
 
 ## In your components
 
@@ -152,3 +201,5 @@ axios.get(url, props).then((result) => {
   console.log("Result: ", result);
 });  
 ```
+## Read more
+[This documentation is also available at www.steafish.com](https://www.steafish.com/#/documentation). The site offers a free web based application for translate your text in context.
