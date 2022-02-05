@@ -8,9 +8,7 @@ This simple plugin will enable your application having in-context translated tex
 
 ```
 import React from "react";
-import Translate from './Translate'
-import TranslateMessage from "./TranslateMessage";
-import {TranslateContext} from "./TranslateContext";
+import {Translate, TranslateContext, TranslateMessage} from './Translater'
 //Place your translated strings in a file that can be imported
 import {allStrings} from "./assets/Strings";
 
@@ -31,8 +29,13 @@ This is a header
 );
 }
 ```
+Another requirement before you start using the steafish-library is the string.js and the env-file. First of all the String.js can be placed in a folder under the src-folder. Let us call this foler assets. Before there is any translated strings the content of this file can be the following:
+```
+const allStrings = [];
+export {allStrings}
+```
 
-In the root of the src folder you need to add the following in your env-file, and since it will only be used during development, your can name this file .env.local
+In the root of your project folder you need to add the following in your env-file, and since it will only be used during development, your can name this file .env.local
 
 The content of your .env.local file will have three lines. The first  line describes the access-key that you will obtain from http://www.steafish.com
 The second line describes the source language of your strings in your tags. The last line describes the languages it is required to translate to. In the example below it is required to translate from English and translate to Dutch, Danish and Italian.
