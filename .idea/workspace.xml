@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5eeaa89d-6f02-45a4-bc15-3ea0ff27679c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -94,7 +95,7 @@
       <workItem from="1644150846244" duration="125000" />
       <workItem from="1644150973569" duration="100000" />
       <workItem from="1644151100027" duration="381000" />
-      <workItem from="1644151493670" duration="9406000" />
+      <workItem from="1644151493670" duration="10001000" />
     </task>
     <servers />
   </component>
