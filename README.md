@@ -8,7 +8,7 @@ This simple plugin will enable your application having in-context translated tex
 
 ```
 import React from "react";
-import {Translate, TranslateContext, TranslateMessage} from './Translater'
+import {Translate, TranslateContext, TranslateMessage} from 'react-steafish'
 //Place your translated strings in a file that can be imported
 import {allStrings} from "./assets/Strings";
 
@@ -24,7 +24,7 @@ return (
 This is a header
 </header>
 <p>{TranslateMessage(valueObj, 'TestMessage', 'message_string_id')}</p>
-<Translate sid="test_string_id">slot</Translate>
+<Translate sid="test_string_id">A test string that will be sent to https://steafish.com</Translate>
 </TranslateContext.Provider>
 );
 }
