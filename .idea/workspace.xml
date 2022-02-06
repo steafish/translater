@@ -7,10 +7,10 @@
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Translate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Translate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TranslateContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TranslateContext.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TranslateMessage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TranslateMessage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Translate.js" beforeDir="false" afterPath="$PROJECT_DIR$/Translate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TranslateContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TranslateMessage.js" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateMessage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +43,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../reacttestapp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -89,7 +89,11 @@
       <workItem from="1642697544007" duration="11261000" />
       <workItem from="1643468107515" duration="373000" />
       <workItem from="1643468900615" duration="5821000" />
-      <workItem from="1643564970806" duration="22286000" />
+      <workItem from="1643564970806" duration="22974000" />
+      <workItem from="1644150846244" duration="125000" />
+      <workItem from="1644150973569" duration="100000" />
+      <workItem from="1644151100027" duration="381000" />
+      <workItem from="1644152537269" duration="1304000" />
     </task>
     <servers />
   </component>
