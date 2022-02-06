@@ -1,5 +1,5 @@
 {
-  "version": "0.1.8",
+  "version": "0.1.9",
   "name": "react-steafish",
   "main": "index.js",
   "description": "Context is everything when translating text. Use http://www.steafish.com for translation and use a json-array for your translation-objects, and refer to the string-ids in this translate-tag. Please see documentation",
@@ -9,8 +9,20 @@
     "url": "https://https://github.com/steafish/translater/issues"
   },
   "homepage": "https://github.com/steafish/translater",
-  "keywords" : ["react", "reactjs", "localization", "translate", "locales", "i18n", "context", "in context", "steafish", "react-steafish"],
+  "keywords": [
+    "react",
+    "reactjs",
+    "localization",
+    "translate",
+    "locales",
+    "i18n",
+    "context",
+    "in context",
+    "steafish",
+    "react-steafish"
+  ],
   "dependencies": {
+    "@babel/plugin-syntax-jsx": "^7.16.7",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
