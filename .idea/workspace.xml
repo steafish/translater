@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Translate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Translate.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TranslateContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TranslateContext.js" afterDir="false" />
@@ -88,7 +89,7 @@
       <workItem from="1642697544007" duration="11261000" />
       <workItem from="1643468107515" duration="373000" />
       <workItem from="1643468900615" duration="5821000" />
-      <workItem from="1643564970806" duration="21818000" />
+      <workItem from="1643564970806" duration="22286000" />
     </task>
     <servers />
   </component>
