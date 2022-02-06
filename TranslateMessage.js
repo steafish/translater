@@ -1,7 +1,5 @@
 import axios from 'axios';
 
-
-
 export default function TranslateMessage(valueObj, string, string_id){
     const stringObj = valueObj && valueObj.strings instanceof Array && valueObj && valueObj.strings ? valueObj.strings.filter(string => string.language_id===valueObj.language_id && string.string_id===string_id):null;
     const translatedString = stringObj && stringObj.length>0?stringObj[0].string:null;

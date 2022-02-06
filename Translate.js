@@ -14,7 +14,7 @@ export default function Translate(props){ // extends React.Component {
     const string = stringObj && stringObj.length>0?stringObj[0].string:null;
 
     if (string){
-        span = <span>{string}</span>
+        span = <>{string}</>
     }else{
         //React.useEffect(() => {
             const baseURL = 'https://www.steafish.com/api/string';
@@ -33,7 +33,7 @@ export default function Translate(props){ // extends React.Component {
                 console.log(response.data);
             });
         //}, [props]);
-        span= <span>{props.children}</span>
+        span= <>{props.children}</>
     }
 
     const isSelected = href.indexOf('?sid=')>0?props.sid===href.substr(href.indexOf('?sid=')+5):false;
