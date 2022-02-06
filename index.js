@@ -1,6 +1,3 @@
-import Translate from  './Translate.js'
-import TranslateContext from  './TranslateContext.js'
-import TranslateMessage from "./TranslateMessage";
-
-
-export default  {Translate, TranslateContext, TranslateMessage};
+export {Translate} from  './Translate.js'
+export {TranslateContext} from  './TranslateContext.js'
+export {TranslateMessage} from "./TranslateMessage";
