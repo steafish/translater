@@ -23,8 +23,8 @@ export default function Translate(props) { // extends React.Component {
             language_id: null,
             string: props.children,
             context: href,
-            project_name: null,     //TODO: Enter the name of your project
-            src_language: process.env.REACT_APP_STEAFISH_SRC_LANGUAGE_ID,                //TODO: Enter the source language for your project
+            project_name: null,     //TODO: Enter the name of the project
+            src_language: process.env.REACT_APP_STEAFISH_SRC_LANGUAGE_ID, 
             language_ids: process.env.REACT_APP_STEAFISH_TRANSLATE_TO_LANGUAGE_IDS ? process.env.REACT_APP_STEAFISH_TRANSLATE_TO_LANGUAGE_IDS.split(',') : [],
         };
         axios.defaults.withCredentials = true;
