@@ -1,5 +1,5 @@
 {
-  "version": "0.1.10",
+  "version": "0.1.11",
   "name": "react-steafish",
   "main": "index.js",
   "description": "Context is everything when translating text. Use http://www.steafish.com for translation and use a json-array for your translation-objects, and refer to the string-ids in this translate-tag. Please see documentation",
@@ -22,7 +22,6 @@
     "react-steafish"
   ],
   "dependencies": {
-    "@babel/plugin-syntax-jsx": "^7.16.7",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
@@ -69,6 +68,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-syntax-jsx": "^7.16.7",
     "eslint-plugin-react-hooks": "^4.3.0"
   }
 }
