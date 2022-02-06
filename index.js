@@ -1,1 +1,1 @@
-export {Translate, TranslateContext, TranslateMessage} from  'Translate.js';
+export {Translate, TranslateContext, TranslateMessage} from  './Translate.js';
