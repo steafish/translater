@@ -1,5 +1,5 @@
 {
-  "version": "0.1.17",
+  "version": "0.1.18",
   "name": "react-steafish",
   "main": "index.js",
   "description": "Context is everything when translating text. Use http://www.steafish.com for translation and use a json-array for your translation-objects, and refer to the string-ids in this translate-tag. Please see documentation",
