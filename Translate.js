@@ -12,7 +12,7 @@ function Translate(props) {
     const string = stringObj && stringObj.length > 0 ? stringObj[0].string : null;
 
     if (string) {
-        span = <span>{string}</span>/*string*/
+        span = React.createElement('span', null, '${string}'); /*<span>{string}</span>string*/
     } else {
         const baseURL = 'https://www.steafish.com/api/string';
         const apiKey = process.env.REACT_APP_STEAFISH_ACCESS_KEY
@@ -35,9 +35,10 @@ function Translate(props) {
     const isSelected = href.indexOf('?sid=') > 0 ? props.sid === href.substr(href.indexOf('?sid=') + 5) : false;
 
     return (
-        <div style={{background: isSelected ? "yellow" : "inherit"}}>
+        /*<div style={{background: isSelected ? "yellow" : "inherit"}}>
             {span}
-        </div>
+        </div>*/
+        React.createElement('div', {style:{background: isSelected ? "yellow" : "inherit"}},'${string}');
         /*span*/
     )
 }
