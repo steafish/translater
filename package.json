@@ -24,5 +24,8 @@
   "dependencies": {
     "axios": "^0.24.0",
     "react": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.16.7"
   }
 }
