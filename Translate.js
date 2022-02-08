@@ -12,7 +12,7 @@ function Translate(props) {
     const string = stringObj && stringObj.length > 0 ? stringObj[0].string : null;
 
     if (string) {
-        span = /*<span>{string}</span>*/string
+        span = <span>{string}</span>/*string*/
     } else {
         const baseURL = 'https://www.steafish.com/api/string';
         const apiKey = process.env.REACT_APP_STEAFISH_ACCESS_KEY
@@ -29,16 +29,16 @@ function Translate(props) {
         axios.post(baseURL, stringObj, {headers: {Authorization: 'Bearer ' + apiKey}}).then((response) => {
             console.log(response.data);
         });
-        span = /*<span>{props.children}</span>*/ props.children
+        span = <span>{props.children}</span> /*props.children*/
     }
 
     const isSelected = href.indexOf('?sid=') > 0 ? props.sid === href.substr(href.indexOf('?sid=') + 5) : false;
 
     return (
-        /*<div style={{background: isSelected ? "yellow" : "inherit"}}>
+        <div style={{background: isSelected ? "yellow" : "inherit"}}>
             {span}
-        </div>*/
-        span
+        </div>
+        /*span*/
     )
 }
 
