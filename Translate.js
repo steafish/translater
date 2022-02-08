@@ -29,7 +29,7 @@ function Translate(props) {
         axios.post(baseURL, stringObj, {headers: {Authorization: 'Bearer ' + apiKey}}).then((response) => {
             console.log(response.data);
         });
-        span = <span>{props.children}</span> /*props.children*/
+        span = span = React.createElement('span', null, '${props.children}'); /*props.children*/
     }
 
     const isSelected = href.indexOf('?sid=') > 0 ? props.sid === href.substr(href.indexOf('?sid=') + 5) : false;
