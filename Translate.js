@@ -38,11 +38,11 @@ function Translate(props) {
         /*<div style={{background: isSelected ? "yellow" : "inherit"}}>
             {span}
         </div>*/
-        if(isSelected){
-            React.createElement('div', {style:{background: "yellow"}},'${string}');
-        }else{
+        /*if(isSelected){*/
+        /*)    React.createElement('div', {style:{background: "yellow"}},'${string}');
+        }else{*/
             React.createElement('div', {style:{background: "inherit"}},'${string}');
-        }
+        /*}*/
         /*span*/
     )
 }
