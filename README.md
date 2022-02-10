@@ -30,6 +30,8 @@ This is a header
 }
 ```
 Another requirement before you start using the steafish-library is the string.js and the env-file. First of all the String.js can be placed in a folder under the src-folder. Let us call this foler assets. Before there is any translated strings the content of this file can be the following:
+
+src/asset/Strings.js
 ```
 const allStrings = [];
 export {allStrings}
@@ -40,6 +42,7 @@ In the root of your project folder you need to add the following in your env-fil
 The content of your .env.local file will have three lines. The first  line describes the access-key that you will obtain from http://www.steafish.com
 The second line describes the source language of your strings in your tags. The last line describes the languages it is required to translate to. In the example below it is required to translate from English and translate to Dutch, Danish and Italian.
 
+.env.local
 ```
 REACT_APP_STEAFISH_ACCESS_KEY=********************
 REACT_APP_STEAFISH_SRC_LANGUAGE_ID=en
@@ -48,6 +51,7 @@ REACT_APP_STEAFISH_TRANSLATE_TO_LANGUAGE_IDS=nl,dk,de
 ## Translated strings
 To make your translated strings available for App.js, place your translated strings in a folder under src and name it assets
 the content of strings.js should be:
+src/asset/Strings.js
 ```
 const allStrings = [
         {"string_id":"message_string_id", "category_id": "front_page_of_app", "string": "Message: Here it is...", "language_id": "en"},
@@ -139,53 +143,6 @@ The component will need to be imported and initiated. The basic initiation is do
 In your App.js you need to include the following:
 ```
 import translater from 'react-steafish'
-
-
-```
-## Additional configuration
-In order to get string-data to be available to the translate-tags, you will need to provide it. You can do this by importing it into your application, and a database. One option does not exclude the second, since to can populate the database and then export your data into the string-data-file.
-
-If you like you can skip the additional configuration, and save that work for later.
-
-If you choose to import string-data from file, you can save your string-data in a file called stringdata.json
-in main.js you can import it using the following statement (first of all you need to store the strings in the file):
-```
-import stringArray from "@/assets/stringdata.js";
-```
-
-The file has the following format:
-```
-[{"string_id":"string-id-for-your-string", "category_id": "front_page_of_app", "string": "Here it is...", "language_id": "en"}]
-```
-
-### Thre alternative configurations
-
-
-Your source strings needs to be extracted from your project and stored into a database where it can be accessable for translation. The below will explain three differnt methods for extracting the strings:
-* Using the Steafish translation platform out of the box
-* Create your own plattform using a server and a backend-database
-* Create your own plattform using FireBase. Then you are able to create your own translation plattform on the client-side
-
-
-#### Configuration
-
-
-The first step in the configuration process is to obtain a api-key. [Register for a Steafish-account here](https://www.steafish.com). After you have logged in, you will be able to obtain your api-key.
-
-Having the api_key you need is to do is to do is to tell react-steafish about the database. In your main.js you need to paste the code below. Before using it in your project you need to change:
-* Project name: Any text will do, but it will be visible to you, your translators and your proof-readers
-* Source language: This will be the source language your translators will use as a source-language when translating
-* Language codes: The list of languages that your language should be translated to. This can be changed in the dashboard after you have loaded the strings in the steafish-application
-* API key: After registering and logged into the application you can obtain your API key
-
-
-In your .env.local file you need the following;
-```
-REACT_APP_STEAFISH_ACCESS_KEY=1|hl7SozTQW2DNj433qW5dB2KbDLe28ijYsvpjKFNU9WzU4
-REACT_APP_STEAFISH_SRC_LANGUAGE_ID=en
-REACT_APP_STEAFISH_TRANSLATE_TO_LANGUAGE_IDS=nl,fr,de,es,pt,it
-....
-
 ```
 ##### Webhooks
 When the translator or the previewer presses "Translation done" or "Preview done" a webhook is triggered, where a post is sent to the address that you specify.This means that your can create a function in your system that should start downloading the strings from Steafish when the translation is done.
