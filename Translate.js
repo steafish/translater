@@ -9,6 +9,7 @@ function Translate(props) {
     const href = window.location.href;
     const stringObj = valueObj.strings instanceof Array && valueObj && valueObj.strings ? valueObj.strings.filter(string => string.language_id === valueObj.language_id && string.string_id === props.sid) : null;
     let translatedString = stringObj && stringObj.length > 0 ? stringObj[0].string : null;
+    let span = null;
 
     if(!translatedString){
         translatedString=props.children;
@@ -55,7 +56,7 @@ function Translate(props) {
 
 function TranslateMessage(valueObj, string, string_id){
     const stringObj = valueObj && valueObj.strings instanceof Array && valueObj && valueObj.strings ? valueObj.strings.filter(string => string.language_id===valueObj.language_id && string.string_id===string_id):null;
-    const translatedString = stringObj && stringObj.length>0?stringObj[0].string:null;
+    let translatedString = stringObj && stringObj.length>0?stringObj[0].string:null;
 
     if(!translatedString) {
         translatedString = string;
