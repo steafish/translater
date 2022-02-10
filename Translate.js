@@ -39,9 +39,9 @@ function Translate(props) {
     const isSelected = href.indexOf('?sid=') > 0 ? props.sid === href.substr(href.indexOf('?sid=') + 5) : false;
 
     if (isSelected) {
-        span = React.createElement('div', {style: {background: "yellow", color: "black"}}, '${translatedString}');
+        span = React.createElement('div', {style: {background: "yellow", color: "black"}}, `${translatedString}`);
     } else {
-        span = React.createElement('div', {style: {background: "inherit"}}, '${translatedString}');
+        span = React.createElement('div', {style: {background: "inherit"}}, `${translatedString}`);
     }
     /*}*/
     return (
